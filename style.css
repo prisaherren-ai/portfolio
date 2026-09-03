@@ -1,0 +1,694 @@
+
+body{
+  height: calc(100vh - 8em);
+  padding: 4em;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Nunito", sans-serif  ;  
+  background-color: rgb(0, 0, 0);
+  /*background-image: url("in the clouds.jpeg");
+  /*background-repeat: no-repeat; 
+  background-size: cover; */
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}
+
+
+h3 {
+    font-family: "Nunito", sans-serif;
+    color: rgba(255, 248, 225);
+}
+
+h4 {
+    font-family: "Nunito", sans-serif;
+    color: #CCABD8;
+}
+
+hr.a {
+	width: 20%;
+	border: 2px solid rgb(68, 64, 67);
+	border-radius: 30%;
+}
+
+/* Typewriter Animation (type + delete loop) */
+.line-1{
+  position: relative;
+  margin: 0 auto;
+  font-size: 180%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  border-right: 2px solid rgba(0,0,0,.75);
+
+  width: 0; /* start hidden, animation will expand it */
+}
+
+/* Put BOTH animations here so they run together */
+.anim-typewriter{
+  animation:
+    typeDelete 6s steps(44, end) infinite,
+    blinkTextCursor 600ms step-end infinite;
+}
+
+/* type -> pause -> delete -> pause */
+@keyframes typeDelete{
+  0%   { width: 0; }
+  40%  { width: 10.5em; }  /* fully typed */
+  75%  { width: 10.5em; }  /* pause */
+  100% { width: 0; }       /* delete */
+}
+
+@keyframes blinkTextCursor{
+  0%, 100% { border-right-color: rgba(255, 255, 255, 0.75); }
+  50%      { border-right-color: transparent; }
+}
+
+
+.hero-gif {
+  width: 130px;        /* adjust size */
+  height: 170px;
+  object-fit: cover;
+  display: block;
+  margin: 50 auto;
+
+  border-radius: 50px;
+  border: 2px solid black;
+  /*box-shadow: 0 10px 30px rgba(0,0,0,0.15);*/
+}
+
+
+
+
+/* Images */
+
+.project-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.square-img {
+  width: 200px;      /* Determines the size of the square */
+  height: 200px;     /* Optional, can be set to auto if using aspect-ratio */
+  aspect-ratio: 1 / 1; /* Ensures the height equals the width, maintaining a square shape */
+  object-fit: cover; /* Crops the image to fit the container without distortion */
+  background-position: top;
+}
+
+/* ===============================
+   Horizontal Scroll Image Gallery
+   =============================== */
+
+   .image-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    max-width: 900px;
+    margin: 40px auto;
+
+    padding: 20px;
+}
+
+/* Scrollbar styling (Chrome/Safari) */
+.image-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.image-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* ===============================
+   Hover Images (iPhone Portrait)
+   =============================== */
+
+.hoverImages {
+    margin: 0;
+    padding: 3px;
+
+    width: 240px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    outline: 2px solid #DDD;
+    border-radius: 12px;
+
+    transition: transform 0.3s ease;
+}
+
+.hoverImages:hover {
+    cursor: pointer;
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* For my projects */
+.container {
+	position: relative;
+	width: 50%;
+}
+
+.image1 {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: white;
+}
+
+.container:hover .overlay {
+	opacity: 50%;
+}
+
+.text {
+	color:rgba(0, 0, 0, 0.75);
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+
+/* Tables */
+
+table {
+	border: 2px snow;
+	margin-left: 80%;
+	margin-right: 80%;
+}
+
+tr {
+	padding: 25px;
+}
+
+td {
+	margin: 5%;
+	align: center;
+}
+
+
+/* Hover Text Animation 
+p::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+	border-radius: 0%;
+  }
+
+  p:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+	border-radius: 0%;
+  }
+  
+  p::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #CCABD8; 
+    z-index: -1;
+    transition: transform 1s ease;
+	border-radius: 0%;
+  }
+
+  p {
+    position: relative;
+  }
+  
+  p:hover {
+	color: rgb(68, 64, 67);
+  }
+  */
+
+  @media (orientation: landscape) {
+    body {
+      grid-auto-flow: column;
+    }
+  }
+
+/* buttons */
+
+.button {
+	border: none;
+	border-radius: 5%;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.75);
+	padding: 15px 32px;
+	display: inline-block;
+	font-family: system-ui;
+	text-align: center;
+	transition-duration: .4s;
+	cursor: pointer;
+}
+
+.button1 {
+	background-color: white;
+	color: rgba(0, 0, 0, 0.75);
+	border: 2px solid rgb(161, 132, 213);
+}
+
+.button1:hover {
+	background-color: rgba(0, 0, 0, 0.75);
+	color: white;
+	border: 2px solid rgb(161, 132, 213);
+}
+
+/* Video */
+video {
+	border-radius: 3%;
+}
+
+/* About */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.square-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+} 
+
+/* ================= EXPERIENCE ================= */
+
+.experience-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+/* Title */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-family: "Nunito", sans-serif;
+    font-size: 32px;
+    color: #d8d8ff;
+    margin: 0;
+}
+
+.title-line {
+    height: 1px;
+    background-color: rgb(68, 64, 67);
+    flex: 1;
+    max-width: 350px;
+}
+
+
+/* Main layout */
+
+.experience-container {
+    display: flex;
+    gap: 40px;
+}
+
+
+/* LEFT SIDE */
+
+.experience-tabs {
+    min-width: 180px;
+    border-right: 1px solid rgb(68, 64, 67);
+}
+
+.experience-tab {
+    width: 100%;
+    background: none;
+    border: none;
+    border-right: 2px solid transparent;
+
+    color: #a9a6bb;
+
+    padding: 14px 18px;
+    text-align: left;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+/* Hover */
+
+.experience-tab:hover {
+    color: #CCABD8;
+    background-color: rgba(204, 171, 216, 0.05);
+}
+
+
+/* Selected tab */
+
+.experience-tab.active {
+    color: #7fffe1;
+
+    border-right: 2px solid #7fffe1;
+
+    background-color: rgba(127, 255, 225, 0.05);
+}
+
+
+/* RIGHT SIDE */
+
+.experience-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.experience-content h3 {
+    font-family: "Nunito", sans-serif;
+    font-size: 23px;
+
+    color: #d8d8ff;
+
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.experience-content h4 {
+    font-family: "Nunito", sans-serif;
+
+    font-size: 17px;
+
+    color: #7fffe1;
+
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+#experience-date {
+    color: #8e8a9e;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Description bullets */
+
+#experience-description p {
+    display: flex;
+    gap: 12px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    margin-bottom: 15px;
+}
+
+.arrow {
+    color: #7fffe1;
+
+    flex-shrink: 0;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.accent-text {
+    color: #CCABD8;
+}
+
+/* ================= PROJECT SECTIONS ================= */
+
+.projects-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+/* Project card layout */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* Individual project */
+
+.project-card {
+    overflow: hidden;
+
+    border: 1px solid rgb(68, 64, 67);
+    border-radius: 14px;
+
+    background-color:
+        rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* Hover animation */
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #CCABD8;
+
+    background-color:
+        rgba(204, 171, 216, 0.05);
+}
+
+
+/* Project photo */
+
+.project-image {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 0;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.project-video {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 0;
+}
+
+/* Tiny image zoom when hovering */
+
+.project-card:hover .project-image {
+    transform: scale(1.03);
+}
+
+
+/* Text area */
+
+.project-info {
+    padding: 22px;
+}
+
+
+.project-info h3 {
+    font-family: "Nunito", sans-serif;
+
+    color: #d8d8ff;
+
+    font-size: 19px;
+
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+
+.project-info p {
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* Technologies */
+
+.project-tools {
+    color: #CCABD8;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .experience-container {
+        flex-direction: column;
+    }
+
+    .experience-tabs {
+        border-right: none;
+    }
+
+}
+
+.github-link {
+    display: inline-block;
+
+    color: #7fffe1;
+    text-decoration: none;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    transition: 0.25s ease;
+}
+
+.github-link:hover {
+    color: #CCABD8;
+    transform: translateX(4px);
+}
+
+/* ===============================
+   MOBILE EXPERIENCE SECTION
+   =============================== */
+
+@media (max-width: 768px) {
+
+    /* Stack tabs above content */
+    .experience-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+    /* Turn vertical tabs into horizontal tabs */
+    .experience-tabs {
+        display: flex;
+
+        width: 100%;
+        min-width: 0;
+
+        overflow-x: auto;
+
+        border-right: none;
+        border-bottom: 1px solid rgb(68, 64, 67);
+
+        scrollbar-width: none;
+    }
+
+
+    /* Hide scrollbar */
+    .experience-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* Individual tab */
+    .experience-tab {
+        width: auto;
+        min-width: max-content;
+
+        flex-shrink: 0;
+
+        padding: 14px 20px;
+
+        text-align: center;
+
+        border-right: none;
+        border-bottom: 2px solid transparent;
+    }
+
+
+    /* Active tab */
+    .experience-tab.active {
+        border-right: none;
+
+        border-bottom: 2px solid #7fffe1;
+
+        background-color: transparent;
+    }
+
+
+    /* Experience information */
+    .experience-content {
+        max-width: 100%;
+    }
+
+
+    .experience-content h3 {
+        font-size: 21px;
+    }
+
+
+    #experience-description p {
+        line-height: 1.8;
+    }
+
+}
