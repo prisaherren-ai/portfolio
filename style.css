@@ -906,7 +906,7 @@ video {
         flex:
             0 0 88%;
 
-        width: 88%;
+        width: 76%;
 
         max-width: none;
 
@@ -921,9 +921,7 @@ video {
 
         margin: 0;
 
-        scroll-snap-align: start;
-
-        scroll-snap-stop: always;
+        scroll-snap-align: center;
     }
 
 
